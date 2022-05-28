@@ -5,4 +5,10 @@ defmodule Identicon do
 
     %Identicon.Image{hex: hash}
   end
+
+  def determine_color(image) do
+    %Identicon.Image{hex: hex_list} = image
+    [r, g, b | _tail] = hex_list
+    [r, g, b]
+  end
 end
