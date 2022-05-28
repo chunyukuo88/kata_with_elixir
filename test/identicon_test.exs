@@ -18,7 +18,6 @@ defmodule IdenticonTest do
     assert result == expected_result
   end
 
-  @tag :skip
   test "It can generate a grid based on an image containing a color and values." do
     image = %Identicon.Image{color: [83, 75, 68], hex: [83, 75, 68, 161, 155, 241, 141, 32, 183, 30, 204, 78, 183, 124, 87, 47]}
     result = build_grid(image)
