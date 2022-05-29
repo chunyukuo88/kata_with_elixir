@@ -2,33 +2,25 @@ defmodule IdenticonTest do
   use ExUnit.Case
   import Identicon
 
+
+  test "It can generate a grid based on an image containing a color and values." do
+    image = %Identicon.Image{color: [83, 75, 68], hex: [83, 75, 68, 161, 155, 241, 141, 32, 183, 30, 204, 78, 183, 124, 87, 47]}
+    output = build_grid(image)
+    expected_output = [
+      {83, 0}, {75, 1}, {68, 2}, {75, 3}, {83, 4},
+      {161, 5}, {155, 6}, {241, 7}, {155, 8}, {161, 9},
+      {141, 10}, {32, 11}, {183, 12}, {32, 13}, {141, 14},
+      {30, 15}, {204, 16}, {78, 17}, {204, 18}, {30, 19},
+      {183, 20}, {124, 21}, {87, 22}, {124, 23}, {183, 24},
+    ]
+
+    assert output == expected_output
+  end
+
   test "It can generate a hash of a string." do
     result = generate_hash("alex")
     expected_result =  %Identicon.Image{hex: [83, 75, 68, 161, 155, 241, 141, 32, 183, 30, 204, 78, 183, 124, 87, 47]}
    
-    assert result == expected_result
-  end
-
-  @tag :skip
-  test "It can generate a color based on the first three digits of an Identicon.Image struct." do
-    image = %Identicon.Image{hex: [83, 75, 68, 161, 155, 241, 141, 32, 183, 30, 204, 78, 183, 124, 87, 47]}
-    result = determine_color(image)
-    expected_result = [ 83, 75, 68 ]
-
-    assert result == expected_result
-  end
-
-  test "It can generate a grid based on an image containing a color and values." do
-    image = %Identicon.Image{color: [83, 75, 68], hex: [83, 75, 68, 161, 155, 241, 141, 32, 183, 30, 204, 78, 183, 124, 87, 47]}
-    result = build_grid(image)
-    expected_result = [
-      [83, 75, 68, 75, 83],
-      [161, 155, 241, 155, 161],
-      [141, 32, 183, 32, 141],
-      [30, 204, 78, 204, 30],
-      [183, 124, 87, 124, 183]
-    ]
-
     assert result == expected_result
   end
 

@@ -6,8 +6,7 @@ defmodule Identicon do
     %Identicon.Image{hex: hash}
   end
 
-  def determine_color(image) do
-    %Identicon.Image{hex: [r, g, b | _tail]} = image
+  def determine_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
     %Identicon.Image{image | color: {r, g, b}}
   end
 
@@ -19,5 +18,7 @@ defmodule Identicon do
     hex
     |> Enum.chunk(3)
     |> Enum.map(&mirror_row/1)
+    |> List.flatten
+    |> Enum.with_index
   end
 end
