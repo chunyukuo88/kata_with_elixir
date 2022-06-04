@@ -1,5 +1,3 @@
-
-
 defmodule Digitizer do
   def digitize(n) do
     if n == 0, do: [0]
