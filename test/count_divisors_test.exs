@@ -9,6 +9,7 @@ defmodule CountDivisors do
             {54, 8}
         ], fn {n, expected} ->
             actual = CountDivisorsKata.divisors(n)
+            IO.puts "Number of divisors #{actual}"
             assert actual == expected
         end)
     end
