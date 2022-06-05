@@ -6,7 +6,7 @@ defmodule TestSuite do
       {true, "true"},
       {false, "false"}
     ], fn {b, expected} ->
-      actual = Kata.boolean_to_string(b)
+      actual = BooleanToStringKata.boolean_to_string(b)
       assert actual == expected
     end)
   end
