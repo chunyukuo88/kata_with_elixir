@@ -4,10 +4,11 @@
 defmodule CountdigitTest do
   
   use ExUnit.Case
+  import Countdigit
 
   defp testing(numtest, num, d, ans) do 
     IO.puts("Test #{numtest}")
-    assert Countdigit.nb_dig(num, d) == ans
+    assert nb_dig(num, d) == ans
   end
   test "nb_dig" do 
     testing(1, 3, 9, 1)

@@ -1,11 +1,9 @@
 defmodule Countdigit do
-
   def nb_dig(n, d) do
-    for int <- 0..n, do: :math.pow(int, 2)
-    |> Enum.filter(numbers, fn num -> contains_digit(n, d)
-    |> 
-    )
-  end
+    numbers = for int <- 0..n, do: :math.pow(int, 2)
+    numbers
+    |> Enum.filter(fn num -> contains_digit(n, d) end)
+    end
 
   def contains_digit(num, digit) do
     digit_as_string = Integer.to_string(digit)
@@ -14,4 +12,3 @@ defmodule Countdigit do
     Enum.member?(num_as_list, digit_as_string)
   end
 end
-
