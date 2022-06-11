@@ -1,10 +1,10 @@
 defmodule Countdigit do
   def nb_dig(n, d) do
-    numbers = for int <- 0..n, do: Kernel.trunc(:math.pow(int, 2))
-    numbers
+    squares = for int <- 0..n, do: Kernel.trunc(:math.pow(int, 2))
+    squares
     |> Enum.map(fn(num) -> count_digit_occurrences(num, Integer.to_string(d)) end)
     |> Enum.sum
-    end
+  end
 
   def count_digit_occurrences(num, digit_as_string) do
     num
