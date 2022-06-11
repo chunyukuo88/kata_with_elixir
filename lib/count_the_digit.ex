@@ -1,8 +1,9 @@
 defmodule Countdigit do
   def nb_dig(n, d) do
-    numbers = for int <- 0..n, do: :math.pow(int, 2)
+    numbers = for int <- 0..n, do: Kernel.trunc(:math.pow(int, 2))
     numbers
-    |> Enum.filter(fn num -> contains_digit(n, d) end)
+    |> Enum.filter(fn(num) -> contains_digit(num, d) end)
+    |> Enum.count
     end
 
   def contains_digit(num, digit) do

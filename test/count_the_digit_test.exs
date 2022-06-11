@@ -7,15 +7,19 @@ defmodule CountdigitTest do
   import Countdigit
 
   defp testing(numtest, num, d, ans) do 
-    IO.puts("Test #{numtest}")
+    IO.puts("Test ##{numtest}")
     assert nb_dig(num, d) == ans
   end
   test "nb_dig" do 
     testing(1, 3, 9, 1)
-    #testing(1, 5750, 0, 4700)
+    testing(1, 8, 4, 3)
+    testing(1, 10, 0, 3)
+#    testing(1, 5750, 0, 4700)
     #testing(2, 11011, 2, 9481)
     #testing(3, 12224, 8, 7733)
     #testing(4, 11549, 1, 11905)
   end
 end
 
+# 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+# 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100

@@ -1,0 +1,18 @@
+Test 1
+
+
+  1) test nb_dig (CountdigitTest)
+     test/count_the_digit_test.exs:13
+     Assertion with == failed
+     code:  assert nb_dig(num, d) == ans
+     left:  '\t'
+     right: 1
+     stacktrace:
+       test/count_the_digit_test.exs:14: (test)
+
+
+
+Finished in 0.01 seconds (0.00s async, 0.01s sync)
+1 test, 1 failure
+
+Randomized with seed 299717
