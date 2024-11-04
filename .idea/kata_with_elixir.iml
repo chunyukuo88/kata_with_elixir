@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Elixir" name="Elixir">
-      <configuration sdkName="" />
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager">
@@ -22,5 +22,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Elixir at C:/Program Files/Elixir">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
